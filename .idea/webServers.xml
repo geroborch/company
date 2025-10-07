@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4aa3cc8c-d7f6-4adb-8590-c1288561b880" name="company" url="http://www.company.gero.web.bbq">
+        <fileTransfer rootFolder="/var/www/company" accessType="SFTP" host="10.101.105.120" port="22" sshConfigId="c8ac95b2-9fdf-4a49-955b-f7745477b395" sshConfig="gero@10.101.105.120:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" isUseSudo="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="d20b9f45-9f03-40cf-b459-514e1e1f934e" name="server">
+        <fileTransfer accessType="SFTP" host="10.101.105.120" port="22" sshConfigId="c8ac95b2-9fdf-4a49-955b-f7745477b395" sshConfig="gero@10.101.105.120:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
