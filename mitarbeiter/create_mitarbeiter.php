@@ -2,7 +2,7 @@
 
 
 <?php
-require 'db.php';
+require '../db.php';
 
 $mitarbeiter = [
     ['vorname' => 'test', 'nachname' => 'einsnach'],
@@ -10,7 +10,7 @@ $mitarbeiter = [
     ['vorname' => 'testiii', 'nachname' => 'dreinach']
 ];
 
-$stmt = $pdo->prepare("INSERT INTO mitarbeiter (vorname, nachname) VALUES (:vorname, :nachname)");
+$stmt = $pdo->prepare("INSERT INTO employees (vorname, nachname) VALUES (:vorname, :nachname)");
 
 foreach ($mitarbeiter as $m) {
     $stmt->execute([
