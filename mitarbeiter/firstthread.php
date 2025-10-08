@@ -1,7 +1,7 @@
 <?php
 
 
-function createTable(array $data, array|false $ueberschrifeten = false, string $farbe_1 = 'blue', string $farbe_2 = 'red'): string
+function createTable(array $data, array|false $ueberschrifeten = false, string $farbe_1 = 'lightgrey', string $farbe_2 = 'lightgreen'): string
 {
     $string = "<table>";
     $string .= "<tr>";
@@ -59,7 +59,8 @@ $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name='viewport'
           content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title>Document</title>
+    <title>Mitarbeiter</title>
+    <h2>Hier sind alle Mitarbeiter unseres Unternehmens!</h2>
 </head>
 <body>
 <?= createTable($array) ?>

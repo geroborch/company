@@ -9,3 +9,5 @@ $stmt = $conn->prepare($sql);
 $stmt->bindParam(':id',$id);
 $stmt->execute();
 
+header('location:firstread.php');
+

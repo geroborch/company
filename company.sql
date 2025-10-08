@@ -24,3 +24,4 @@ VALUES ('Peter', 'Pan'),
        ('maxi', 'minimann');
 
 
+ALTER TABLE department add column is_hiring bool default '0';

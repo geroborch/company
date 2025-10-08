@@ -48,4 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET') {
     $stmt->bindParam(':id',$id);
     $stmt->execute();
 }
+header('location:firstread.php');
 ?>
+
+

@@ -59,7 +59,9 @@ $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name='viewport'
           content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title>Document</title>
+    <title>Department</title>
+    <h2>Hier sind die Abteilungen unseres Unternehmens!</h2>
+
 </head>
 <body>
 <?= createTable($array) ?>
