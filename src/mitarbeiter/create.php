@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET'){
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <title>Mitarbeiter hinzufügen</title>
     </head>
     <body>
 
@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET'){
     $stmt->bindParam(':fname',$fname);
     $stmt->bindParam(':lname',$lname);
     $stmt->execute();
-    echo 'Hier soll es in die DB';
+    echo "✅ Mitarbeiter wurde eingetragen!";
+    exit();
 }
 ?>

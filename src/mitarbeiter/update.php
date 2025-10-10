@@ -3,7 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] === 'GET') {
 
 
-    $id = $_GET['id'];
+    //$id = $_GET['id'];
     $conn = new PDO('mysql:host=localhost;dbname=company', 'phpstorm', 'phpp@ssw0rt');
     $sql = 'Select * from employees where id = :id';
     $stmt = $conn->prepare($sql);
@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET') {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $fname = $result['fname'];
     $lname = $result['lname'];
-    $id = $result['id'];
-    var_dump($result);
+ //   $id = $result['id'];
+   // var_dump($result);
 
     ?>
 
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET') {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $id = $_POST['id'];
-    $conn = new PDO('mysql:host=localhost;dbname=company','phpstorm','123456');
+    $conn = new PDO('mysql:host=localhost;dbname=company','phpstorm','phpp@ssw0rt');
     $sql = "UPDATE  employees set fname = :fname , lname = :lname where id = :id";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':fname',$fname);

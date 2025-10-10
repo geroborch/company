@@ -24,4 +24,8 @@ VALUES ('Peter', 'Pan'),
        ('maxi', 'minimann');
 
 
-ALTER TABLE department add column is_hiring bool default '0';
+ALTER TABLE department
+    ADD is_hiring BOOLEAN DEFAULT FALSE,
+    ADD work_mode ENUM('remote','hybrid','onsite') DEFAULT 'onsite',
+    ADD created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ADD updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;

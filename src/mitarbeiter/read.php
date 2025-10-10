@@ -1,5 +1,17 @@
 <?php
 
+# Verbindung mit der Datenbank mit einem PDO Objekt
+$conn = new PDO('mysql:host=localhost;dbname=company', 'phpstorm', 'phpp@ssw0rt');
+#Den Auszuführenden SQL Befehl
+$sql = 'SELECT * FROM employees';
+#Erstellen eines PDOStatement Objektes "SQL Boten" und übergabe des SQL-Befehls mithilfe des PDO Objektes
+$stmt = $conn->prepare($sql);
+# Ausführen des SQL-Befehls
+$stmt->execute();
+# Das Ergebnis des SQLs in form eines nummerischen Arrays (fetchAll) mit assoziativen Arrays als Elementen (PDO::FETCH_ASSOC)  in eine variable
+$array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 
 function createTable(array $data, array|false $ueberschrifeten = false, string $farbe_1 = 'lightgrey', string $farbe_2 = 'lightgreen'): string
 {
@@ -27,10 +39,10 @@ function createTable(array $data, array|false $ueberschrifeten = false, string $
         }
         $string .= "<td class='link' style='background-color: white'>";
         $id = $user['id'];
-        $string .= "<a href='firstdelete.php?id=$id'>Delete</a>";
+        $string .= "<a href='/mitarbeiter/delete/{$id}'>Delete</a>";
         $string .= "</td>";
         $string .= "<td class='link' style='background-color: white'>";
-        $string .= "<a href='firstupdate.php?id=$id'>Update</a>";
+        $string .= "<a href='/mitarbeiter/update/{$id}'>Update</a>";
         $string .= "</td>";
         $string .= "</tr>";
     }
@@ -38,19 +50,7 @@ function createTable(array $data, array|false $ueberschrifeten = false, string $
     return $string;
 }
 
-# Verbindung mit der Datenbank mit einem PDO Objekt
-$conn = new PDO('mysql:host=localhost;dbname=company', 'phpstorm', 'phpp@ssw0rt');
-#Den Auszuführenden SQL Befehl
-$sql = 'SELECT * FROM employees';
-#Erstellen eines PDOStatement Objektes "SQL Boten" und übergabe des SQL-Befehls mithilfe des PDO Objektes
-$stmt = $conn->prepare($sql);
-# Ausführen des SQL-Befehls
-$stmt->execute();
-# Das Ergebnis des SQLs in form eines nummerischen Arrays (fetchAll) mit assoziativen Arrays als Elementen (PDO::FETCH_ASSOC)  in eine variable
-$array = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
-
 
 <!doctype html>
 <html lang='en'>
